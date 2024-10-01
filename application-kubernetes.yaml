@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application-test
+  labels:
+    app: application-test
+spec:
+  replicas: 3  # Запускаем 3 пода для обработки нагрузки
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: application-test
+  template:
+    metadata:
+      labels:
+        app: application-test
+    spec:
+      affinity:
+        # Настраиваем размещение подов на разных нодах для отказоустойчивости
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - application-test
+              topologyKey: "kubernetes.io/hostname"  # Размещаем поды на разных нодах
+      containers:
+        - name: application-test-container
+          image: application-test:latest  # образ приложения
+          resources:
+            requests:
+              memory: 128Mi  # Постоянное потребление памяти
+              cpu: 500m  # Начальные запросы на CPU, чтобы покрыть потребности инициализации
+            limits:
+              cpu: '1'  # Ограничиваем максимальное использование CPU
+              memory: 128Mi  # Ограничиваем максимальное использование памяти
+          lifecycle:
+            # Используем hooks для ожидания завершения инициализации перед обработкой запросов
+            postStart:
+              exec:
+                command:   # Имитируем время инициализации
+                  - /bin/sh
+                  - "-c"
+                  - sleep 10
+          readinessProbe:
+            initialDelaySeconds: 15  # Задержка перед первой проверкой готовности
+            periodSeconds: 10  # Интервал между проверками готовности
+            httpGet:
+              host: ''
+              path: /healthz  # Путь для проверки готовности
+              port: 8080
+              scheme: ''
