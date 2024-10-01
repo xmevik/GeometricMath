@@ -1,0 +1,16 @@
+﻿<Project Sdk="MSTest.Sdk/3.5.1">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseVSTest>true</UseVSTest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GeomerticMath.Core\GeometricMath.Core.csproj" />
+    <ProjectReference Include="..\GeometricMath.Data\GeometricMath.Data.csproj" />
+  </ItemGroup>
+
+</Project>

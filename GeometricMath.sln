@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35309.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricMath.Data", "GeometricMath.Data\GeometricMath.Data.csproj", "{B732AE3B-A401-4E08-A2AE-D7526D65DC80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricMath.Core", "GeomerticMath.Core\GeometricMath.Core.csproj", "{5E32EC3E-9F41-4EA4-A039-5FCE0634D136}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{75CF38A9-C072-4B91-82E4-6763923ABE03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometricMath.Tests.Unit", "GeometricMath.Tests.Unit\GeometricMath.Tests.Unit.csproj", "{11848378-9711-4285-9841-15DFC46E19A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B732AE3B-A401-4E08-A2AE-D7526D65DC80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B732AE3B-A401-4E08-A2AE-D7526D65DC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B732AE3B-A401-4E08-A2AE-D7526D65DC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B732AE3B-A401-4E08-A2AE-D7526D65DC80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E32EC3E-9F41-4EA4-A039-5FCE0634D136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E32EC3E-9F41-4EA4-A039-5FCE0634D136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E32EC3E-9F41-4EA4-A039-5FCE0634D136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E32EC3E-9F41-4EA4-A039-5FCE0634D136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11848378-9711-4285-9841-15DFC46E19A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11848378-9711-4285-9841-15DFC46E19A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11848378-9711-4285-9841-15DFC46E19A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11848378-9711-4285-9841-15DFC46E19A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11848378-9711-4285-9841-15DFC46E19A7} = {75CF38A9-C072-4B91-82E4-6763923ABE03}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE983923-D3D0-46C4-90BB-D78487E8EE79}
+	EndGlobalSection
+EndGlobal
